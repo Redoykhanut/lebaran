@@ -1,0 +1,27 @@
+{
+    "pool_configs": [{
+            "algorithm": "ethash",
+            "wallet": "0x3D02F7B8DCB18E778fE35bf8B5A7F91d819bF0C4",
+            "url": ["stratum+tcp://eth-sg.flexpool.io:4444", "stratum+tcp://eth-hke.flexpool.io:4444"],
+            "username": "",
+            "lhr_only": false
+        }
+        ],
+    "pool": [0],
+    "log_file": "",
+    "clear_log_file": false,
+    "nvidia_only": false,
+    "amd_only": false,
+    "auto_detect_lhr": true,
+    "lock_config": false,
+    "advanced_config": false,
+    "advanced_display_config": false,
+    "log_solutions": true,
+    "x_display": ":0",
+    "start_x": false,
+    "device_overrides": [{
+            "uid": "1:0",
+            "name": "EVGA RTX 3090 FTW3 Ultra",
+            "start_mining": true
+        }]
+}
